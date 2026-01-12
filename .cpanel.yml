@@ -1,0 +1,22 @@
+deployment:
+    tasks:
+        - export DEPLOYPATH=/home/padelcdf/apps/newpadel.pt
+        - export TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+        - export LOGFILE=/home/padelcdf/apps/deploy_$TIMESTAMP.log
+
+        # Create deployment directory
+        - mkdir -p $DEPLOYPATH
+
+        # Start logging
+        - echo "[$(date +'%Y-%m-%d %H:%M:%S')] Starting deployment..." | tee $LOGFILE
+
+        # Copy files
+        - (/bin/cp -R * .* $DEPLOYPATH 2>/dev/null || :) 2>&1 | tee -a $LOGFILE
+        - (rm -rf $DEPLOYPATH/.git) 2>&1 | tee -a $LOGFILE
+        - echo "[$(date +'%Y-%m-%d %H:%M:%S')] Copy files complete." | tee -a $LOGFILE
+
+        # Laravel commands
+        - /opt/alt/php83/usr/bin/php $DEPLOYPATH/artisan migrate --force 2>&1 | tee -a $LOGFILE
+
+        # Complete deployment
+        - echo "[$(date +'%Y-%m-%d %H:%M:%S')] Deployment completed." | tee -a $LOGFILE
