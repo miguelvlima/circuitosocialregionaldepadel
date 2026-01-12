@@ -125,17 +125,26 @@
         class="circuit-logo"
     />
     <h1>Circuito Social Regional de Padel</h1>
-    <p>Calendário oficial de torneios / Rankings do circuito.</p>
+    <p>Viseu | Castro Daire | Seia | Tondela </p>
 
     <div class="actions">
-      <a href="{{ url('/calendario') }}" class="btn primary">
-        Calendário
-      </a>
+        <a href="{{ url('/calendario') }}" class="btn primary">
+            Calendário
+        </a>
 
-      <span class="btn disabled" aria-disabled="true">
-        Ranking
-      </span>
+        <a
+            href="{{ asset('docs/regulamento-circuito.pdf') }}"
+            class="btn"
+            download
+        >
+            Regulamento
+        </a>
+
+        <span class="btn disabled" aria-disabled="true">
+            Rankings (brevemente)
+        </span>
     </div>
+
 
     <footer>
       © {{ date('Y') }} Circuito Social Regional de Padel
