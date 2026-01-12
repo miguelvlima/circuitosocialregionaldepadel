@@ -105,11 +105,25 @@
       font-size:12px;
       color:rgba(169,182,214,.7);
     }
+
+    .circuit-logo{
+    width:220px;
+    max-width:60%;
+    height:auto;
+    margin:0 auto 16px;
+    display:block;
+    }
   </style>
 </head>
 
 <body>
   <div class="card">
+
+    <img
+        src="{{ asset('images/logo-circuito.png') }}"
+        alt="Logótipo do Circuito Social Regional de Padel"
+        class="circuit-logo"
+    />
     <h1>Circuito Social Regional de Padel</h1>
     <p>Calendário oficial de torneios / Rankings do circuito.</p>
 

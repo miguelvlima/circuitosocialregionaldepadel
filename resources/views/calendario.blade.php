@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calendário do Circuito Social Regional de Padel</title>
+  <title>Circuito Social Regional de Padel · Calendário</title>
   <style>
     :root{
       --bg:#0b1220;
@@ -101,14 +101,72 @@
     .empty{margin-top:14px;padding:18px;border:1px dashed rgba(255,255,255,.18);border-radius:16px;color:var(--muted);text-align:center;}
     .link{font-size:12px;color:rgba(232,238,252,.9);text-decoration:none;border:1px solid var(--line);padding:8px 10px;border-radius:12px;background:rgba(255,255,255,.05);}
     .link:hover{background:rgba(255,255,255,.08)}
+
+    .back-home{
+      display:inline-block;
+      margin-bottom:16px;
+      padding:8px 12px;
+      font-size:13px;
+      font-weight:600;
+      color:var(--text);
+      text-decoration:none;
+
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+    }
+
+    .back-home:hover{
+      background:rgba(255,255,255,.10);
+    }
+
+    .page-footer{
+      margin-top:28px;
+      padding:18px 0 10px;
+      border-top:1px solid var(--line);
+      text-align:center;
+    }
+
+    .page-footer__copy{
+      font-size:12px;
+      color:rgba(169,182,214,.7);
+    }
+
+    .page-footer__clubs{
+      margin-top:10px;
+      font-size:12px;
+      color:rgba(169,182,214,.6);
+      line-height:1.5;
+
+      /* evita aquela “linha gigante” */
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+      white-space:normal;
+      overflow-wrap:anywhere;
+    }
+
+    /* se forem links */
+    .page-footer__clubs a{
+      color:rgba(169,182,214,.75);
+      text-decoration:none;
+    }
+    .page-footer__clubs a:hover{
+      text-decoration:underline;
+    }
   </style>
 </head>
 
 <body>
+
   <div class="wrap">
+    <a href="{{ url('/') }}" class="back-home">
+        ← Início
+      </a>
     <header>
+        
       <div class="title">
-        <h1 id="calendarTitle">Circuito Social Regional de Padel</h1>
+        <h1 id="calendarTitle">Circuito Social Regional de Padel · Calendário</h1>
       </div>
 
       <div class="controls controls-left">
@@ -126,6 +184,16 @@
 
     <div class="status" id="status"></div>
     <div id="content"></div>
+    <footer class="page-footer">
+      <div class="page-footer__copy">
+        © {{ date('Y') }} Circuito Social Regional de Padel
+      </div>
+
+      {{-- se esta linha existir no teu HTML, coloca-a aqui dentro --}}
+      <div class="page-footer__clubs">
+        Blitz Padel Club // JF79 Sports Center // MPadel // New Padel // Padel Viseu Academy // Puro Padel Club // Tondela Padel Club
+      </div>
+    </footer>
   </div>
 
   <script>
@@ -298,7 +366,7 @@
       const year = Number(elYear.value) || INITIAL_YEAR;
 
       document.getElementById("calendarTitle").textContent =
-          `Circuito Social Regional de Padel · ${year}`;
+          `Circuito Social Regional de Padel · Calendário ${year}`;
 
       const q = normalize(elQ.value);
 
@@ -353,5 +421,7 @@
 
     loadAndRender();
   </script>
+  
 </body>
+
 </html>
