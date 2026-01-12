@@ -5,6 +5,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/calendario', function (Request $request) {
     // Ano via ?events-year=2026 (igual ao exemplo)
     $year = (int)($request->query('events-year', now()->year));
 
