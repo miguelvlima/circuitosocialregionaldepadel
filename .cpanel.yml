@@ -1,6 +1,6 @@
 deployment:
     tasks:
-        - export DEPLOYPATH=/home/padelcdf/apps/newpadel.pt
+        - export DEPLOYPATH=/home/padelcdf/apps/circuitosocialregionaldepadel
         - export TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
         - export LOGFILE=/home/padelcdf/apps/deploy_$TIMESTAMP.log
 
