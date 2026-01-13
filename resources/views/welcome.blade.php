@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Circuito social Regional de Padel</title>
+  <title>Circuito Social Regional de Padel</title>
 
   <style>
     :root{
