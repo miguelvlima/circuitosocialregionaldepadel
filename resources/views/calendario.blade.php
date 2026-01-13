@@ -176,7 +176,7 @@
         </div>
         <div>
           <label for="q">Pesquisar</label><br/>
-          <input id="q" placeholder="nome, clube, categoria…" />
+          <input id="q" placeholder="nome, clube, mês, etc." />
         </div>
         <button class="btn" id="reload">Atualizar</button>
       </div>
