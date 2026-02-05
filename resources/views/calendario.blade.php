@@ -154,6 +154,14 @@
     .page-footer__clubs a:hover{
       text-decoration:underline;
     }
+    select {
+      color-scheme: dark; /* diz ao browser que é dark */
+    }
+
+    select option {
+      color: #0b1220;          /* texto escuro */
+      background-color: #fff; /* fundo claro */
+    }
   </style>
 </head>
 

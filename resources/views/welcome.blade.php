@@ -132,17 +132,18 @@
             Calendário
         </a>
 
+        <a href="{{ url('/rankings') }}" class="btn primary">
+            Rankings
+        </a>
+
         <a
             href="{{ asset('docs/regulamento-circuito.pdf') }}"
-            class="btn"
+            class="btn primary"
             download
         >
             Regulamento
         </a>
-
-        <span class="btn disabled" aria-disabled="true">
-            Rankings (brevemente)
-        </span>
+        
     </div>
 
 

@@ -121,3 +121,26 @@ Route::get('/api/calendario', function (Request $request) {
         'events' => $data,
     ]);
 });
+
+Route::get('/rankings', function (Request $request) {
+    $map = [
+        'M2' => 'https://portal2.tiesports.com/rankings/d6072e66-d4f2-4b97-acf9-99508b322fa6',
+        'M3' => 'https://portal2.tiesports.com/rankings/68386d2e-a995-43ee-b596-b11652cf9b7c',
+        'M4' => 'https://portal2.tiesports.com/rankings/5c925745-41e8-47e9-8e78-739acaac1487',
+        'M5' => 'https://portal2.tiesports.com/rankings/cc3a4332-ec72-41a3-9dea-aa533e4f8d25',
+        'M6' => 'https://portal2.tiesports.com/rankings/4a75d617-144c-40db-84e3-6b98f4949df1',
+        'F3' => 'https://portal2.tiesports.com/rankings/5e172398-7f75-41c8-b26e-789088bf05b9',
+        'F4' => 'https://portal2.tiesports.com/rankings/ed590100-e27c-4be7-aa63-b7ec58c625f9',
+        'F5' => 'https://portal2.tiesports.com/rankings/51d8f950-2c54-48f5-ae83-c05b05e2212c',
+        'F6' => 'https://portal2.tiesports.com/rankings/dc1523da-91a2-4aaa-8f64-83b6f5f81558',
+    ];
+
+    $selected = strtoupper($request->query('cat', 'M2'));
+    if (!isset($map[$selected])) $selected = 'M2';
+
+    return view('rankings', [
+        'map' => $map,
+        'selected' => $selected,
+        'url' => $map[$selected],
+    ]);
+});
